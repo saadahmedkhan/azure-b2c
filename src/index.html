@@ -54,7 +54,69 @@
 
 
 
-        
+        <div class="claims-provider-list-buttons social" aria-label="Login with your social account" role="form">
+          <div class="intro">
+            <h2 aria-level="1">Login with your social account</h2>
+          </div>
+          <div class="options">
+              <div>
+                  <button class="accountButton claims-provider-selection" id="GoogleExchange" role="link">Google</button>
+              </div>
+              <div>
+                  <button class="accountButton claims-provider-selection" id="AppleExchange" role="link">Apple</button>
+              </div>
+          </div>
+        </div>
+        <div class="divider">
+          <h2>OR</h2>
+        </div>
+        <form id="localAccountForm" action="JavaScript:void(0);" class="localAccount" aria-label="Login with your existing account">
+          <div class="intro">
+            <h2 aria-level="1">
+              Or sign in
+            </h2>
+          </div>
+          <div class="error pageLevel" aria-hidden="true" role="alert" style="display: none;">
+            <p></p>
+          </div>
+          <div class="entry">
+            <div class="entry-item">
+              <label for="signInName">
+                Email
+              </label>
+              <div class="error itemLevel" aria-hidden="true" role="alert" style="display: none;">
+                <p></p>
+              </div>
+              <input type="text" id="signInName" name="Email" title="Please enter a valid Email" pattern="^[a-zA-Z0-9.!#$%&amp;'^_`{}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$" autofocus="" placeholder="Email" aria-label="Email">
+            </div>
+              <div class="entry-item">
+                <div class="password-label">
+                  <label for="password">Password</label>
+                  <a id="forgotPassword" href="/tasmucpb2cnonprod.onmicrosoft.com/B2C_1A_signup_signin_UAT/api/CombinedSigninAndSignup/forgotPassword?csrf_token=aWlKbDVxRXlJcWlMQno3TlNKQkNvR09XOXNUd3psaGdON0syYmYzcFhWTGFKTE5QOFlIWDNCVGY2QU5KSytiSUp6N0RWNXRLVnphMHhDbTJaNTQ0bnc9PTsyMDIyLTA5LTI5VDA5OjMzOjUwLjI1MDI0ODRaO1RIbWUvUHF5bElwRzFsUjdxOUpPRUE9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiI2YTA5NWY2OC1hYTg4LTQ2ZWItYjVjYy1mYTJjMTVmNmRmMzUifQ&amp;p=B2C_1A_signup_signin_UAT">Forgot your password?</a>
+                </div>
+                <div class="error itemLevel" aria-hidden="true" style="display: none;">
+                  <p role="alert"></p>
+                </div>
+                <input type="password" id="password" name="Password" placeholder="Password" aria-label="Password" autocomplete="current-password" aria-required="true">
+              </div>
+            <div class="working"></div>
+            <div class="rememberMe">
+              <input id="rememberMe" type="checkbox" name="rememberMe">
+              <label for="rememberMe">Keep me signed in</label>
+            </div>
+            <div class="buttons">
+              <button id="next" type="submit" form="localAccountForm">Login</button>
+            </div>
+          </div>
+          <div class="divider">
+            <h2>OR</h2>
+          </div>
+          <div class="create">
+            <p>
+              Don't have an account?<a id="createAccount" href="/tasmucpb2cnonprod.onmicrosoft.com/B2C_1A_signup_signin_UAT/api/CombinedSigninAndSignup/unified?local=signup&amp;csrf_token=aWlKbDVxRXlJcWlMQno3TlNKQkNvR09XOXNUd3psaGdON0syYmYzcFhWTGFKTE5QOFlIWDNCVGY2QU5KSytiSUp6N0RWNXRLVnphMHhDbTJaNTQ0bnc9PTsyMDIyLTA5LTI5VDA5OjMzOjUwLjI1MDI0ODRaO1RIbWUvUHF5bElwRzFsUjdxOUpPRUE9PTt7Ik9yY2hlc3RyYXRpb25TdGVwIjoxfQ==&amp;tx=StateProperties=eyJUSUQiOiI2YTA5NWY2OC1hYTg4LTQ2ZWItYjVjYy1mYTJjMTVmNmRmMzUifQ&amp;p=B2C_1A_signup_signin_UAT">Register now</a>
+            </p>
+          </div>
+        </form>
 
 
 
