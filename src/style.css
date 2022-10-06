@@ -10,22 +10,45 @@
 }
 
 @layer base {
-    html {
-        font-family: Mulish, system-ui, sans-serif;
+    input {
+        @apply h-12 text-base rounded-md p-2 px-3
+        text-gray-900 placeholder:text-gray-700
+        border border-gray-400 ring-1 ring-gray-400
+        focus:outline-none focus:border-gray-800 focus:ring-1 focus:ring-gray-800
+        disabled:bg-white disabled:text-gray-500 disabled:border-gray-300 disabled:placeholder:text-gray-500
+        invalid:outline-none invalid:border-red-900 invalid:ring-1 invalid:ring-red-900
+        focus:invalid:border-red-900 focus:invalid:ring-1 focus:invalid:ring-red-900;
+    }
+
+    button, [type="button"], [type="reset"], [type="submit"] {
+        @apply py-4 px-5 
+        bg-gray-900 text-white font-bold text-base
+        flex items-center justify-center w-full rounded-md;
+    }
+
+    button#GoogleExchange::before,
+    button#AppleExchange::before {
+        content: "";
+        background-color: transparent;
+        width: 17px;
+        height: 17px;
+        margin-right: 8px;
+    }
+
+    button#GoogleExchange {
+        @apply bg-white text-gray-900;
+    }
+
+    button#GoogleExchange::before {
+        background: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0377 7.3776H14.5007V7.34993H8.50065V10.0166H12.2683C11.7187 11.5689 10.2417 12.6833 8.50065 12.6833C6.29165 12.6833 4.50065 10.8923 4.50065 8.68327C4.50065 6.47427 6.29165 4.68327 8.50065 4.68327C9.52032 4.68327 10.448 5.06793 11.1543 5.69627L13.04 3.8106C11.8493 2.70093 10.2567 2.0166 8.50065 2.0166C4.81898 2.0166 1.83398 5.0016 1.83398 8.68327C1.83398 12.3649 4.81898 15.3499 8.50065 15.3499C12.1823 15.3499 15.1673 12.3649 15.1673 8.68327C15.1673 8.23627 15.1213 7.79993 15.0377 7.3776Z' fill='%23FFC107'/%3E%3Cpath d='M2.60156 5.58027L4.7919 7.1866C5.38456 5.71927 6.8199 4.68327 8.49956 4.68327C9.51923 4.68327 10.4469 5.06793 11.1532 5.69627L13.0389 3.8106C11.8482 2.70093 10.2556 2.0166 8.49956 2.0166C5.9389 2.0166 3.71823 3.46227 2.60156 5.58027Z' fill='%23FF3D00'/%3E%3Cpath d='M8.49945 15.3505C10.2215 15.3505 11.7861 14.6915 12.9691 13.6198L10.9058 11.8738C10.2365 12.3808 9.40445 12.6838 8.49945 12.6838C6.76545 12.6838 5.29312 11.5782 4.73845 10.0352L2.56445 11.7102C3.66779 13.8692 5.90845 15.3505 8.49945 15.3505Z' fill='%234CAF50'/%3E%3Cpath d='M15.037 7.37825H14.5V7.35059H8.5V10.0173H12.2677C12.0037 10.7629 11.524 11.4059 10.9053 11.8743C10.9057 11.8739 10.906 11.8739 10.9063 11.8736L12.9697 13.6196C12.8237 13.7523 15.1667 12.0173 15.1667 8.68392C15.1667 8.23692 15.1207 7.80059 15.037 7.37825Z' fill='%231976D2'/%3E%3C/svg%3E") no-repeat;
+    }
+
+    button#AppleExchange::before {
+        background: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.2483 11.8039C13.9033 12.5702 13.737 12.9127 13.2933 13.5889C12.672 14.5339 11.7958 15.7139 10.7133 15.7214C9.74953 15.7302 9.50077 15.0927 8.19203 15.1039C6.88452 15.1102 6.61203 15.7339 5.64703 15.7239C4.56328 15.7139 3.73452 14.6514 3.11327 13.7077C1.37577 11.0614 1.19203 7.95891 2.26577 6.30891C3.02577 5.13891 4.22703 4.45141 5.35578 4.45141C6.50577 4.45141 7.22827 5.08266 8.17828 5.08266C9.10077 5.08266 9.66202 4.45016 10.992 4.45016C11.997 4.45016 13.0595 4.99766 13.8195 5.94266C11.3345 7.30516 11.7383 10.8539 14.2483 11.8039ZM9.98203 3.39391C10.4658 2.77266 10.8333 1.89641 10.6995 1.00391C9.91078 1.05766 8.98828 1.56141 8.44952 2.21391C7.96077 2.80891 7.55577 3.69141 7.71327 4.54516C8.57452 4.57266 9.46577 4.05891 9.98203 3.39391Z' fill='white'/%3E%3C/svg%3E") no-repeat;
     }
 }
 
 @layer components {
-    input {
-        @apply border h-12 text-base rounded-md p-2 px-3
-        text-[#231F20] placeholder:text-[#5D5D5D]
-        border border-[#D9D9D9] ring-1 ring-[#D9D9D9]
-        focus:outline-none focus:border-[#353535] focus:ring-1 focus:ring-[#353535]
-        disabled:bg-white disabled:text-[#AEAEAE] disabled:border-[#DEDEDE] disabled:placeholder:text-[#AEAEAE]
-        invalid:outline-none invalid:border-[#CB1B0C] invalid:ring-1 invalid:ring-[#CB1B0C]
-        focus:invalid:border-[#CB1B0C] focus:invalid:ring-1 focus:invalid:ring-[#CB1B0C];
-    }
-
     .claims-provider-list-buttons {
         @apply my-4;
     }
@@ -43,11 +66,11 @@
     }
 
     .claims-provider-list-buttons .options button {
-        @apply flex items-center justify-center w-full border-2 border-[#231F20] rounded-md p-3 font-bold text-sm;
+        @apply flex items-center justify-center w-full border-2 border-gray-900 rounded-md p-3 font-bold text-sm;
     }
 
     .claims-provider-list-buttons .options button#AppleExchange {
-        @apply bg-[#231F20] text-white;
+        @apply bg-gray-900 text-white;
     }
 
     .divider {
@@ -71,12 +94,12 @@
     }
 
     .entry-item label {
-        @apply font-normal text-sm text-[#353535];
+        @apply font-normal text-sm text-gray-800;
     }
 
-    .entry-item input {
+    /* .entry-item input {
         
-    }
+    } */
 
     #forgotPassword {
         @apply hidden;
@@ -86,35 +109,20 @@
         @apply hidden;
     }
 
-    .buttons button {
-        @apply flex items-center justify-center w-full rounded-md p-2 py-4 font-bold text-base bg-[#231F20] text-white;
-    }
+    /* .buttons button {
+        @apply flex items-center justify-center w-full rounded-md p-2 py-4 font-bold text-base bg-gray-900 text-white;
+    } */
 
     .create p {
-        @apply flex items-center justify-center mt-10 font-normal text-base text-[#353535];
+        @apply flex items-center justify-center mt-10 font-normal text-base text-gray-800;
     }
 
     .create a {
-        @apply font-bold text-base underline ml-4 text-[#353535];
+        @apply font-bold text-base underline ml-4 text-gray-800;
     }
 }
 
-button#GoogleExchange::before,
-button#AppleExchange::before {
-    content: "";
-    background-color: transparent;
-    width: 17px;
-    height: 17px;
-    margin-right: 8px;
-}
 
-button#GoogleExchange::before {
-    background: url("data:image/svg+xml,%3Csvg width='17' height='17' viewBox='0 0 17 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.0377 7.3776H14.5007V7.34993H8.50065V10.0166H12.2683C11.7187 11.5689 10.2417 12.6833 8.50065 12.6833C6.29165 12.6833 4.50065 10.8923 4.50065 8.68327C4.50065 6.47427 6.29165 4.68327 8.50065 4.68327C9.52032 4.68327 10.448 5.06793 11.1543 5.69627L13.04 3.8106C11.8493 2.70093 10.2567 2.0166 8.50065 2.0166C4.81898 2.0166 1.83398 5.0016 1.83398 8.68327C1.83398 12.3649 4.81898 15.3499 8.50065 15.3499C12.1823 15.3499 15.1673 12.3649 15.1673 8.68327C15.1673 8.23627 15.1213 7.79993 15.0377 7.3776Z' fill='%23FFC107'/%3E%3Cpath d='M2.60156 5.58027L4.7919 7.1866C5.38456 5.71927 6.8199 4.68327 8.49956 4.68327C9.51923 4.68327 10.4469 5.06793 11.1532 5.69627L13.0389 3.8106C11.8482 2.70093 10.2556 2.0166 8.49956 2.0166C5.9389 2.0166 3.71823 3.46227 2.60156 5.58027Z' fill='%23FF3D00'/%3E%3Cpath d='M8.49945 15.3505C10.2215 15.3505 11.7861 14.6915 12.9691 13.6198L10.9058 11.8738C10.2365 12.3808 9.40445 12.6838 8.49945 12.6838C6.76545 12.6838 5.29312 11.5782 4.73845 10.0352L2.56445 11.7102C3.66779 13.8692 5.90845 15.3505 8.49945 15.3505Z' fill='%234CAF50'/%3E%3Cpath d='M15.037 7.37825H14.5V7.35059H8.5V10.0173H12.2677C12.0037 10.7629 11.524 11.4059 10.9053 11.8743C10.9057 11.8739 10.906 11.8739 10.9063 11.8736L12.9697 13.6196C12.8237 13.7523 15.1667 12.0173 15.1667 8.68392C15.1667 8.23692 15.1207 7.80059 15.037 7.37825Z' fill='%231976D2'/%3E%3C/svg%3E") no-repeat;
-}
-
-button#AppleExchange::before {
-    background: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.2483 11.8039C13.9033 12.5702 13.737 12.9127 13.2933 13.5889C12.672 14.5339 11.7958 15.7139 10.7133 15.7214C9.74953 15.7302 9.50077 15.0927 8.19203 15.1039C6.88452 15.1102 6.61203 15.7339 5.64703 15.7239C4.56328 15.7139 3.73452 14.6514 3.11327 13.7077C1.37577 11.0614 1.19203 7.95891 2.26577 6.30891C3.02577 5.13891 4.22703 4.45141 5.35578 4.45141C6.50577 4.45141 7.22827 5.08266 8.17828 5.08266C9.10077 5.08266 9.66202 4.45016 10.992 4.45016C11.997 4.45016 13.0595 4.99766 13.8195 5.94266C11.3345 7.30516 11.7383 10.8539 14.2483 11.8039ZM9.98203 3.39391C10.4658 2.77266 10.8333 1.89641 10.6995 1.00391C9.91078 1.05766 8.98828 1.56141 8.44952 2.21391C7.96077 2.80891 7.55577 3.69141 7.71327 4.54516C8.57452 4.57266 9.46577 4.05891 9.98203 3.39391Z' fill='white'/%3E%3C/svg%3E") no-repeat;
-}
 
 .showPassword,
 .hidePassword {
