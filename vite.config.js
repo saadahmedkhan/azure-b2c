@@ -13,7 +13,8 @@ export default defineConfig({
         emptyOutDir: true,
         rollupOptions: {
             input: {
-                index: path.resolve(__dirname, "src", "index.html")
+                index: path.resolve(__dirname, "src", "index.html"),
+                signup_1: path.resolve(__dirname, "src", "signup_1.html")
             },
             //input: glob.sync(path.resolve(__dirname, "src", "*.html"))
             output: {

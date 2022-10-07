@@ -1,0 +1,44 @@
+@import "./base.css";
+
+@layer base {}
+
+@layer components {
+    #api {
+        @apply flex flex-col;
+    }
+
+    #api>.buttons,
+    #api>.heading,
+    #api>.intro {
+        @apply hidden;
+    }
+
+    form ul {
+        @apply flex flex-col;
+    }
+
+    form .attr ul li:not(:first-child) {
+        @apply hidden;
+    }
+
+    form>.buttons,
+    form .helpLink.tiny {
+        @apply hidden;
+    }
+
+    form .buttons {
+        @apply fixed inset-x-0 bottom-0 m-4 my-6;
+    }
+
+    form #email {
+        @apply w-full;
+    }
+
+    .verificationControlContent ul .attrEntry {
+        @apply flex flex-col-reverse;
+    }
+
+    div.error {
+        @apply text-error font-normal text-xs my-2;
+    }
+}

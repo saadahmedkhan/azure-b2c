@@ -4,7 +4,7 @@ const defaultTheme = require("tailwindcss/defaultTheme")
 
 module.exports = {
   content: [
-    "./src/index.html",
+    "./src/*.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
@@ -37,6 +37,9 @@ module.exports = {
         400: "#CB787B",
         700: "#B94B4F",
         900: "#A81E23"
+      },
+      error: {
+        DEFAULT: "#CB1B0C"
       }
     }
   },
